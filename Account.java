@@ -8,8 +8,9 @@ import javax.swing.SwingUtilities;
 
 public class Account extends User implements UserInterface{
     
-    public Account(String fullName, String userName, long phoneNumber, String email, String password, long accountId) {
-       super(fullName, userName, phoneNumber, email, password, accountId);
+    public Account() {
+        /*String fullName, String userName, long phoneNumber, String email, String password, long accountId
+       super(fullName, userName, phoneNumber, email, password, accountId);*/
     }
 
     @Override
@@ -68,7 +69,7 @@ public class Account extends User implements UserInterface{
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
                 // Yeni bir JFrame oluşturun
-                JFrame frame = new JFrame("Button Example");
+                JFrame frame = new JFrame();
                 // Buton oluşturun
                 JButton button = new JButton("Log Out");
 

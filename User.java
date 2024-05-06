@@ -12,13 +12,8 @@ public abstract class User {
     protected ArrayList<User> users;
     protected ArrayList<User> friends;
 
-    public User(String fullName, String userName, long phoneNumber, String email, String password, long accountId) {
-        this.fullName = fullName;
-        this.userName = userName;
-        this.phoneNumber = phoneNumber;
-        this.email = email;
-        this.password = password;
-        this.accountId = accountId;
+    public User() {
+        
     }
     
     public void addFriends(long accountId) {

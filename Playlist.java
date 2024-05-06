@@ -1,20 +1,22 @@
 package musiclibrary;
 
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
+
 public class Playlist implements MusicAndPlaylist{
     private String title;
     private int numberOfMusic;
     private int durationInMinute;
     private User ownerOfPlaylist;
 
-    public Playlist(String title, int numberOfMusic, int durationInMinute) {
-        this.title = title;
-        this.numberOfMusic = numberOfMusic;
-        this.durationInMinute = durationInMinute;
+    public Playlist() {
+        
     }
     
     
     @Override
-    public void play() {
+    public void play(String title) {
     }
 
     @Override
@@ -31,6 +33,22 @@ public class Playlist implements MusicAndPlaylist{
 
     @Override
     public void share() {
+        SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                // Yeni bir JFrame oluşturun
+                JFrame frame = new JFrame();
+                // Buton oluşturun
+                JButton button = new JButton("Share");
+
+                // Butonu frame'e ekle
+                frame.add(button);
+
+                // Frame'i boyutlandırın ve görünür yapın
+                frame.setSize(300, 200);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setVisible(true);
+            }
+        });
     }
 
     @Override

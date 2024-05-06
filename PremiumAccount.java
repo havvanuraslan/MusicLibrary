@@ -8,8 +8,8 @@ import javax.swing.SwingUtilities;
 
 public class PremiumAccount extends User implements UserInterface{
     
-    public PremiumAccount(String fullName, String userName, long phoneNumber, String email, String password, long accountId) {
-        super(fullName, userName, phoneNumber, email, password, accountId);
+    public PremiumAccount() {
+        
     }
 
     
@@ -67,7 +67,7 @@ public class PremiumAccount extends User implements UserInterface{
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
                 // Yeni bir JFrame oluşturun
-                JFrame frame = new JFrame("Button Example");
+                JFrame frame = new JFrame();
                 // Buton oluşturun
                 JButton button = new JButton("Log Out");
 

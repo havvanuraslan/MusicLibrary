@@ -2,7 +2,7 @@
 package musiclibrary;
 
 public interface MusicAndPlaylist {
-    public void play();
+    public void play(String title);
     public double like();
     public void search();
     public void mix();

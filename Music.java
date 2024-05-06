@@ -1,5 +1,9 @@
 package musiclibrary;
 
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
+
 public class Music implements MusicAndPlaylist{
     private String title;
     private String artist;
@@ -11,23 +15,23 @@ public class Music implements MusicAndPlaylist{
     private String lyrics;
     private double rating;
     private String composer;
+    private boolean isPlaying;
+    private String currentMusic;
 
-    public Music(String title, String artist, String album, String genre, int durationInSeconds, int releaseYear, String filePath, String lyrics, double rating, String composer) {
-        this.title = title;
-        this.artist = artist;
-        this.album = album;
-        this.genre = genre;
-        this.durationInSeconds = durationInSeconds;
-        this.releaseYear = releaseYear;
-        this.filePath = filePath;
-        this.lyrics = lyrics;
-        this.rating = rating;
-        this.composer = composer;
+    public Music() {
+        
     }
     
     @Override
-    public void play() {
-        
+    public void play(String title) {
+        isPlaying = false;
+        if(isPlaying){
+            System.out.println("Music is not playing.");
+        }else{
+            currentMusic = title;
+            System.out.println("Music " + currentMusic + " is playing.");
+        }
+        isPlaying = false;
     }
 
     @Override
@@ -45,6 +49,22 @@ public class Music implements MusicAndPlaylist{
 
     @Override
     public void share() {
+        SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                // Yeni bir JFrame oluşturun
+                JFrame frame = new JFrame();
+                // Buton oluşturun
+                JButton button = new JButton("Share");
+
+                // Butonu frame'e ekle
+                frame.add(button);
+
+                // Frame'i boyutlandırın ve görünür yapın
+                frame.setSize(300, 200);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setVisible(true);
+            }
+        });
     }
 
     @Override
