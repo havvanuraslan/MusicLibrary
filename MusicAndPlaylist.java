@@ -7,5 +7,5 @@ public interface MusicAndPlaylist {
     public void search();
     public void mix();
     public void share();
-    public void playAgain();
+    public void playAgain(String title);
 }

@@ -5,11 +5,12 @@ import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 
 public class Playlist implements MusicAndPlaylist{
-    private String title;
-    private int numberOfMusic;
-    private int durationInMinute;
-    private User ownerOfPlaylist;
-
+    protected String title;
+    protected int numberOfMusic;
+    protected int durationInMinute;
+    protected User ownerOfPlaylist;
+    protected boolean isPlaying;
+    
     public Playlist() {
         
     }
@@ -35,15 +36,11 @@ public class Playlist implements MusicAndPlaylist{
     public void share() {
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-                // Yeni bir JFrame oluşturun
                 JFrame frame = new JFrame();
-                // Buton oluşturun
                 JButton button = new JButton("Share");
 
-                // Butonu frame'e ekle
                 frame.add(button);
 
-                // Frame'i boyutlandırın ve görünür yapın
                 frame.setSize(300, 200);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.setVisible(true);
@@ -52,7 +49,7 @@ public class Playlist implements MusicAndPlaylist{
     }
 
     @Override
-    public void playAgain() {
+    public void playAgain(String title) {
     }
     
     public void createAPlaylist() {

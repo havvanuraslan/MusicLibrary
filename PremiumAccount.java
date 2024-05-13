@@ -6,7 +6,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 
-public class PremiumAccount extends User implements UserInterface{
+public class PremiumAccount extends AccountManager implements UserInterface{
+    protected boolean isStudent;
     
     public PremiumAccount() {
         
@@ -89,6 +90,13 @@ public class PremiumAccount extends User implements UserInterface{
     public void updateUserName(){
         System.out.println("user name is updated.");
     }
-
+    
+    public void payment(long accountId, boolean isStudent){
+        if(isStudent){
+            System.out.println("For student account payment is 20$.");
+        }else{
+            System.out.println("For general account payment is 40$.");
+        }
+    }
 
 }

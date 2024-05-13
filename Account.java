@@ -6,11 +6,10 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 
-public class Account extends User implements UserInterface{
+public class Account extends AccountManager implements UserInterface{
     
     public Account() {
-        /*String fullName, String userName, long phoneNumber, String email, String password, long accountId
-       super(fullName, userName, phoneNumber, email, password, accountId);*/
+      
     }
 
     @Override

@@ -5,18 +5,18 @@ import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 
 public class Music implements MusicAndPlaylist{
-    private String title;
-    private String artist;
-    private String album;
-    private String genre;
-    private int durationInSeconds;
-    private int releaseYear;
-    private String filePath;
-    private String lyrics;
-    private double rating;
-    private String composer;
-    private boolean isPlaying;
-    private String currentMusic;
+    protected String title;
+    protected String artist;
+    protected String album;
+    protected String genre;
+    protected int durationInSeconds;
+    protected int releaseYear;
+    protected String filePath;
+    protected String lyrics;
+    protected double rating;
+    protected String composer;
+    protected boolean isPlaying;
+    protected String currentMusic;
 
     public Music() {
         
@@ -51,15 +51,14 @@ public class Music implements MusicAndPlaylist{
     public void share() {
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-                // Yeni bir JFrame oluşturun
+                
                 JFrame frame = new JFrame();
-                // Buton oluşturun
+                
                 JButton button = new JButton("Share");
 
-                // Butonu frame'e ekle
+                
                 frame.add(button);
 
-                // Frame'i boyutlandırın ve görünür yapın
                 frame.setSize(300, 200);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.setVisible(true);
@@ -68,7 +67,12 @@ public class Music implements MusicAndPlaylist{
     }
 
     @Override
-    public void playAgain() {
+    public void playAgain(String title) {
+        if(isPlaying && !currentMusic.isEmpty()){
+            System.out.println(title + " is playing again.");
+        }else{
+            System.out.println("No song is currently playing.");
+        }
     }
 
     

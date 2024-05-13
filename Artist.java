@@ -7,12 +7,12 @@ import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 
 public class Artist extends User implements UserInterface{
-    private String genre;
-    private int numberOfFollowers;
-    private int numberOfMonthlyListener;
-    private ArrayList<String> albums;
-    private ArrayList<Artist> relatedArtists;
-    private ArrayList<Music> musics;
+    protected String genre;
+    protected int numberOfFollowers;
+    protected int numberOfMonthlyListener;
+    protected ArrayList<String> albums;
+    protected ArrayList<Artist> relatedArtists;
+    protected ArrayList<Music> musics;
     
     public Artist() {
         

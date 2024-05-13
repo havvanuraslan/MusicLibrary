@@ -8,6 +8,8 @@ public class TestClass {
         //account1.createAccount();
         //account1.updatePassword();
         //System.out.println(account1.password);
-        music.share();
+        //music.share();
+        PremiumAccount p1 = new PremiumAccount();
+        p1.payment(1256455, true);
     }
 }
