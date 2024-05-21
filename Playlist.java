@@ -21,8 +21,7 @@ public class Playlist implements MusicAndPlaylist{
     }
 
     @Override
-    public double like() {
-        return 0;
+    public void like(String title) {
     }
 
     @Override

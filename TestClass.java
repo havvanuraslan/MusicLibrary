@@ -9,7 +9,9 @@ public class TestClass {
         //account1.updatePassword();
         //System.out.println(account1.password);
         //music.share();
-        PremiumAccount p1 = new PremiumAccount();
-        p1.payment(1256455, true);
+        Account p1 = new PremiumAccount();
+        account1.createAccount();
+        PremiumAccount pa1 = new PremiumAccount();
+        p1.logInToAccount();
     }
 }

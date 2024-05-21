@@ -17,6 +17,7 @@ public class Music implements MusicAndPlaylist{
     protected String composer;
     protected boolean isPlaying;
     protected String currentMusic;
+    protected int numberOfLikes;
 
     public Music() {
         
@@ -35,8 +36,8 @@ public class Music implements MusicAndPlaylist{
     }
 
     @Override
-    public double like() {
-        return rating;
+    public void like(String title) {
+        
     }
     
     @Override
