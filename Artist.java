@@ -6,19 +6,23 @@ public class Artist extends Account{
     protected String genre;
     protected int numberOfFollowers;
     protected int numberOfMonthlyListener;
-    protected ArrayList<String> albums;
+    protected String[] albums;
     protected ArrayList<Artist> relatedArtists;
-    protected ArrayList<Music> musics;
+    protected ArrayList<Music> musicsOfArtist;
     
     public Artist() {
         
     }
     
-    
-    public void topTracks(){
-        
-            System.out.println("");
-        
+    public void insertAlbum(){
+        albums[0] = "Red";
+        albums[1] = "Lover";
+        albums[2] = "reputation";
+    }
+    public void showAlbums(){
+        for(int i =0; i<=albums.length;i++){
+            System.out.println(albums[i]);
+        }
     }
     
     public void relatedArtists() {
@@ -33,8 +37,8 @@ public class Artist extends Account{
     }
     
     public int albumCount() {
-        if (getAlbums() != null) {
-            return getAlbums().size();
+        if (albums!= null) {
+            return albums.length;
         } else {
             return 0;
         }
@@ -65,14 +69,6 @@ public class Artist extends Account{
 
     public void setNumberOfMonthlyListener(int numberOfMonthlyListener) {
         this.numberOfMonthlyListener = numberOfMonthlyListener;
-    }
-
-    public ArrayList<String> getAlbums() {
-        return albums;
-    }
-
-    public void setAlbums(ArrayList<String> albums) {
-        this.albums = albums;
     }
 
     public ArrayList<Artist> getRelatedArtists() {

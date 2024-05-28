@@ -2,22 +2,43 @@ package musiclibrary;
 
 import java.util.ArrayList;
 
-public abstract class User {
+public class User {
     protected String fullName;
     protected String userName;
     protected long phoneNumber;
     protected String email;
     protected String password;
     protected long accountId;
-    protected ArrayList<User> users;
+    protected ArrayList<String> users = new ArrayList<>();
     protected ArrayList<User> friends;
 
     public User() {
         
     }
+    public void addUserToArraylist(){
+        users.add("Büşra Yıldırım");
+        users.add("Havva Nur Aslan");
+    }
+    public void showInfo(){
+        System.out.println(users.get(0));
+        System.out.println(users.get(1));
+
+    }
     
-
-
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     public String getFullName() {
         return this.fullName;
     }
@@ -66,13 +87,6 @@ public abstract class User {
         this.accountId = accountId;
     }
 
-    public ArrayList<User> getUsers() {
-        return users;
-    }
-
-    public void setUsers(ArrayList<User> users) {
-        this.users = users;
-    }
 
     public ArrayList<User> getFriends() {
         return friends;

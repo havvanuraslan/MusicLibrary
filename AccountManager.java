@@ -2,23 +2,19 @@ package musiclibrary;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.SwingUtilities;
 
 public abstract class AccountManager {
     protected String fullName;
     protected String userName;
-    protected long phoneNumber;
+    protected int phoneNumber;
     protected String email;
     protected String password;
-    protected long accountId;
+    protected int accountId =(int) (Math.random()*1000);
     protected ArrayList<User> users;
-    protected ArrayList<User> friends;
-    
+    InsertRecords insert = new InsertRecords();
     
     public AccountManager(){
-    
+        
     }    
     
     public void createAccount() {
@@ -32,12 +28,17 @@ public abstract class AccountManager {
         this.userName = scanner.nextLine();
         System.out.print("Password: ");
         this.password = scanner.nextLine();
-       
         System.out.println("Account is created successfully.");
-        System.out.println("Full name: " + this.fullName +"\n"+ "Email: "+ this.email+ "\n" + "User Name: "+ this.userName+ "\n" + "Password: " + this.password + "\n");
+        System.out.println("Full name: " + this.fullName +"\n"+ "Email: "+ this.email+ "Phone number: "+ this.phoneNumber+ "\n" + "User Name: "+ this.userName+ "\n" + "Password: " + this.password + "\n");
+        
+        
+        insert.insert( accountId, this.fullName, this.userName, this.email, this.password);
+        
     }
 
     public void logInToAccount() {
+        
+        
         Scanner scanner = new Scanner(System.in);
         System.out.print("User Name: ");
         String inputUserName = scanner.nextLine();
@@ -72,23 +73,16 @@ public abstract class AccountManager {
     
    
     public void logOut(){
-        SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                // Yeni bir JFrame oluşturun
-                JFrame frame = new JFrame();
-                // Buton oluşturun
-                JButton button = new JButton("Log Out");
-
-                // Butonu frame'e ekle
-                frame.add(button);
-
-                // Frame'i boyutlandırın ve görünür yapın
-                frame.setSize(300, 200);
-                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                frame.setVisible(true);
-            }
-        });
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Dou you want to log out? ");
+        boolean answer = scanner.nextBoolean();
+        
+        if (answer =true) {
+            System.out.println("You logged out successfully.");
+        }
     }
+    
     public void updatePassword(){
         String newPassword = null;
         Scanner scanner = new Scanner(System.in);
@@ -98,14 +92,27 @@ public abstract class AccountManager {
    
             System.out.print("Enter new password: ");
             newPassword = scanner.nextLine();
-  
         }
-        password= newPassword;
+        this.password= newPassword;
     }
     
     public void updateUserName(){
-        System.out.println("user name is updated.");
+        String newUserName = null;
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Do you want to update your username? ");
+        boolean answer = scanner.nextBoolean();
+        if(answer== true){
+   
+            System.out.print("Enter new username: ");
+            newUserName = scanner.nextLine();
+        }
+        this.userName= newUserName;
     }
+    
+    
+    
+    
+    
     public String getFullName() {
         return fullName;
     }
@@ -126,7 +133,7 @@ public abstract class AccountManager {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(long phoneNumber) {
+    public void setPhoneNumber(int phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
@@ -150,7 +157,7 @@ public abstract class AccountManager {
         return accountId;
     }
 
-    public void setAccountId(long accountId) {
+    public void setAccountId(int accountId) {
         this.accountId = accountId;
     }
 
@@ -162,11 +169,4 @@ public abstract class AccountManager {
         this.users = users;
     }
 
-    public ArrayList<User> getFriends() {
-        return friends;
-    }
-
-    public void setFriends(ArrayList<User> friends) {
-        this.friends = friends;
-    }
 }
